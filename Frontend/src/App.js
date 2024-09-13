@@ -8,7 +8,7 @@ function App() {
 
 
   const searchHospitals = () => {
-    const mockData = [
+    const Data = [
       { name: 'City Hospital', location: 'Delhi', cost: '5000', diseaseType: 'Cardiology' },
  
     ];
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+    
         <h1>Hospital Cost Finder</h1>
         <p>Find hospitals based on your location, cost preferences, and medical needs.</p>
 
@@ -52,7 +52,7 @@ function App() {
         </div>
 
        
-      </header>
+  
     </div>
   );
 }
