@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #2e2f36;
+  background-color: #909be2;
   color: #ffffff;
 }
 
@@ -15,31 +15,28 @@ body {
   min-height: 100vh;
 }
 
-.App-header {
-  margin-bottom: 20px;
-}
 
-h1 {
-  font-size: 7rem;
-  margin-bottom: 10px;
+
+h1{
+  font-size: 3rem;
   color: #f8f9fa;
 }
 
-p {
+p{
   font-size: 1.2rem;
   margin-bottom: 40px;
-  color: #adb5bd;
+  color: #0a2b4d;
 }
 
 
-.form-container {
+.form-container{
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-bottom: 30px;
 }
 
-input {
+input{
   padding: 10px;
   border: 1px solid #dee2e6;
   border-radius: 5px;
@@ -47,13 +44,13 @@ input {
   width: 200px;
 }
 
-input[type="number"] {
+input[type="number"]{
   width: 150px;
 }
 
 button {
   padding: 10px 20px;
-  background-color: #28a745;
+  background-color: #1f1a87;
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -62,7 +59,7 @@ button {
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #2e146c;
 }
 
 .hospital-list {

@@ -5,22 +5,16 @@ function App() {
   const [location, setLocation] = useState('');
   const [cost, setCost] = useState('');
   const [disease, setDisease] = useState('');
-  const [hospitals, setHospitals] = useState([]);
+
 
   const searchHospitals = () => {
     const mockData = [
       { name: 'City Hospital', location: 'Delhi', cost: '5000', diseaseType: 'Cardiology' },
-      { name: 'Sunrise Clinic', location: 'Mumbai', cost: '7000', diseaseType: 'Orthopedics' },
+ 
     ];
 
-    const filteredHospitals = mockData.filter(
-      (hospital) =>
-        hospital.location.toLowerCase().includes(location.toLowerCase()) &&
-        hospital.cost <= cost &&
-        hospital.diseaseType.toLowerCase().includes(disease.toLowerCase())
-    );
+   
 
-    setHospitals(filteredHospitals);
   };
 
   return (
@@ -36,6 +30,8 @@ function App() {
             onChange={(e) => setDisease(e.target.value)}
             
           />
+
+          
           <label>Enter Location:</label>
           <input
             type="text"  value={location}
