@@ -27,7 +27,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className="header-container">
+
       <h1 className="header">Hospital Cost Finder</h1>
+      </div>
       <nav className="navbar">
         <ul>
           <li><a href="#">Home</a></li>
