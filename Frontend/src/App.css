@@ -120,3 +120,22 @@ button:hover {
   }
 }
 
+
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+  }
+  
+  .results-container ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .map-placeholder {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+  }
+}
+
