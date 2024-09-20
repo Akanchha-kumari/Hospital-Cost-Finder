@@ -17,7 +17,7 @@ import {
   Alert,
   AlertIcon,
 } from '@chakra-ui/react';
-import { FaSave, FaTrash, FaEdit, FaArrowLeft } from 'react-icons/fa';
+import { FaSave, FaTrash, FaEdit } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -37,6 +37,7 @@ const Register = () => {
   const [form, setForm] = useState({ name: '', email: '', age: '', password: '' });
   const [editIndex, setEditIndex] = useState(null);
   const [isRegistered, setIsRegistered] = useState(false);
+  const [showLoginButton, setShowLoginButton] = useState(false); 
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -51,9 +52,10 @@ const Register = () => {
       setEditIndex(null);
     } else {
       try {
-        await axios.post('http://localhost:3000/api/admins', form);
+        await axios.post('http://localhost:5000/api/admins', form);
         setAdmins([...admins, form]);
-        setIsRegistered(true); 
+        setIsRegistered(true);
+        setShowLoginButton(true); 
         setTimeout(() => setIsRegistered(false), 3000); 
       } catch (error) {
         console.error('Error registering admin:', error);
@@ -177,7 +179,7 @@ const Register = () => {
             </Alert>
           )}
 
-          {isRegistered && (
+          {showLoginButton && ( 
             <Stack spacing={4} mt={4}>
               <Button colorScheme="blue" onClick={handleLoginRedirect}>
                 Go to Login

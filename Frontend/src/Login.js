@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Login.css";
-import { Box, Button, Card, Input, Stack } from "@chakra-ui/react";
+import { Box, Button, Card, Input, Stack, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { FaUserMd } from "react-icons/fa"; 
+import { FaUserMd, FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -12,10 +12,12 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
   const [data, setData] = useState([]);
+  const [showPassword, setShowPassword] = useState(false); 
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  
   async function fetchData() {
-    let res = await fetch("http://localhost:3000/api/admins");
+    let res = await fetch("http://localhost:5000/api/admins");
     let loginarr = await res.json();
     setData(loginarr);
   }
@@ -30,34 +32,41 @@ const Login = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-  }
+    
+    const validationErrors = validate(values);
+    setErrors(validationErrors);
 
-  useEffect(() => {
-    if (
-      Object.keys(errors).length === 0 &&
-      values.email !== "" &&
-      values.password !== ""
-    ) {
+    if (Object.keys(validationErrors).length === 0) {
       const user = data.find((el) => el.email === values.email);
 
       if (user) {
         if (user.password === values.password) {
-          handleNavigate();
+          navigate("/search");
         } else {
           alert("Wrong password");
         }
       } else {
-        alert("Email is not registered, you can create a new");
+        alert("Email is not registered, you can create a new account.");
       }
     }
-  }, [errors]);
+  }
 
-  function handleNavigate() {
-    navigate("/search");
+  function validate(values) {
+    const errors = {};
+    if (!values.email) {
+      errors.email = "Email is required";
+    }
+    if (!values.password) {
+      errors.password = "Password is required";
+    }
+    return errors;
   }
 
   const handleRegisterNavigate = () => {
     navigate("/register");
+  };
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -80,16 +89,23 @@ const Login = () => {
             {errors.email && <p className="error-text">{errors.email}</p>}
 
             <label>Password</label>
-            <Input
-              className="input-glow"
-              type="password"
-              focusBorderColor="darkblue"
-              placeholder="Password"
-              borderRadius="none"
-              value={values.password}
-              name="password"
-              onChange={handleChange}
-            />
+            <InputGroup>
+              <Input
+                className="input-glow"
+                type={showPassword ? "text" : "password"} 
+                focusBorderColor="darkblue"
+                placeholder="Password"
+                borderRadius="none"
+                value={values.password}
+                name="password"
+                onChange={handleChange}
+              />
+              <InputRightElement>
+                <Button variant="ghost" onClick={handleTogglePassword} _focus={{ boxShadow: 'none' }}>
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </Button>
+              </InputRightElement>
+            </InputGroup>
             {errors.password && <p className="error-text">{errors.password}</p>}
 
             <a href="#" className="forgot-password">Forget Password?</a>
