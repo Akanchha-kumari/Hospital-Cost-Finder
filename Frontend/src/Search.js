@@ -16,7 +16,7 @@ function Search() {
     const Data = [
       { name: 'City Hospital', location: 'Delhi', cost: 5000, diseaseType: 'Cardiology' },
       { name: 'Green Clinic', location: 'Mumbai', cost: 3000, diseaseType: 'Orthopedics' },
-      { name: 'Health Center', location: 'Delhi', cost: 7000, diseaseType: 'Neurology' },
+     
       { name: 'Life Hospital', location: 'Bangalore', cost: 4500, diseaseType: 'Cardiology' },
     ];
 
