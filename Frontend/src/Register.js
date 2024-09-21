@@ -114,7 +114,7 @@ const Register = () => {
               name="name"
               value={form.name}
               onChange={handleInputChange}
-              placeholder="Enter admin name"
+              placeholder="Enter your name"
               bg="white"
               borderColor="gray.300"
               _placeholder={{ color: 'gray.500' }}
@@ -127,7 +127,7 @@ const Register = () => {
               name="email"
               value={form.email}
               onChange={handleInputChange}
-              placeholder="Enter admin email"
+              placeholder="Enter your email"
               bg="white"
               borderColor="gray.300"
               _placeholder={{ color: 'gray.500' }}
@@ -141,7 +141,7 @@ const Register = () => {
               type="number"
               value={form.age}
               onChange={handleInputChange}
-              placeholder="Enter admin age"
+              placeholder="Enter your age"
               bg="white"
               borderColor="gray.300"
               _placeholder={{ color: 'gray.500' }}
@@ -155,7 +155,7 @@ const Register = () => {
               type="password"
               value={form.password}
               onChange={handleInputChange}
-              placeholder="Enter admin password"
+              placeholder="Enter password"
               bg="white"
               borderColor="gray.300"
               _placeholder={{ color: 'gray.500' }}
@@ -196,7 +196,7 @@ const Register = () => {
           animation={`${fadeIn} 0.8s ease`}
         >
           <Text fontSize="xl" mb={4}>
-            Admin List
+            User List
           </Text>
           <Table variant="simple">
             <Thead bg="teal.100">

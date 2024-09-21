@@ -38,16 +38,17 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
+  position: relative;
 }
 
 .login-container {
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 10px;
+  padding: 50px;
+  border-radius: 12px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
-  min-height: 70vh;
+  max-width: 600px;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,10 +70,11 @@ body {
 
 .login-box {
   background-color: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
+  padding: 40px; 
+  border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.2rem; 
 }
 
 .login-box:hover {
@@ -81,8 +83,8 @@ body {
 }
 
 .input-glow {
-  padding: 10px;
-  border-radius: 4px;
+  padding: 15px; 
+  border-radius: 6px;
   border: 1px solid #ced4da;
   transition: all 0.3s ease-in-out;
 }
@@ -97,10 +99,10 @@ body {
   background-color: #007bff;
   border: 2px solid #007bff;
   width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  margin-top: 20px;
-  border-radius: 5px;
+  padding: 15px; 
+  font-size: 1.2rem;
+  margin-top: 25px;
+  border-radius: 8px;
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -131,8 +133,9 @@ body {
 
 .login-container h2 {
   color: #007bff;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
+  font-size: 2rem; 
   text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
@@ -140,18 +143,19 @@ body {
   display: block;
   font-weight: bold;
   color: #333;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 1.1rem; 
 }
 
 .error-text {
   color: red;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .forgot-password {
   display: block;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
   color: #007bff;
   text-decoration: none;
   transition: text-decoration 0.2s;
@@ -161,11 +165,24 @@ body {
   text-decoration: underline;
 }
 
-.outerBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  position: relative;
+.doctor-icon {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 70px;
+  color: #007bff;
+  animation: rotate-border 6s linear infinite;
+}
+
+@media screen and (max-width: 500px) {
+  .login-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .doctor-icon {
+    font-size: 50px;
+    bottom: 10px;
+    right: 10px;
+  }
 }
