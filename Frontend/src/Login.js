@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./Login.css";
+import Validation from "./Validtion";
 import { Box, Button, Card, Input, Stack, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { FaUserMd, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaHospitalAlt } from "react-icons/fa"; 
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -72,6 +73,7 @@ const Login = () => {
   return (
     <div className="outerBox">
       <Box className="login-container">
+        <FaHospitalAlt className="hospital-logo" /> {}
         <Card className="login-box">
           <h2>LOGIN</h2>
           <form className="form" onSubmit={handleSubmit}>
@@ -133,7 +135,6 @@ const Login = () => {
             </Button>
           </Stack>
         </Card>
-        <FaUserMd className="doctor-icon" />
       </Box>
     </div>
   );

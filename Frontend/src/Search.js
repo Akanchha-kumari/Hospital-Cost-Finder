@@ -1,6 +1,6 @@
 import './Search.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import About from './About';
 import Services from './Services';
@@ -11,12 +11,13 @@ function Search() {
   const [cost, setCost] = useState('');
   const [disease, setDisease] = useState('');
   const [results, setResults] = useState([]);
+  
+  const navigate = useNavigate();
 
   const searchHospitals = () => {
     const Data = [
       { name: 'City Hospital', location: 'Delhi', cost: 5000, diseaseType: 'Cardiology' },
       { name: 'Green Clinic', location: 'Mumbai', cost: 3000, diseaseType: 'Orthopedics' },
-     
       { name: 'Life Hospital', location: 'Bangalore', cost: 4500, diseaseType: 'Cardiology' },
     ];
 
@@ -48,51 +49,54 @@ function Search() {
                 textDecoration: 'none',
                 transition: 'color 0.3s ease',
               }}
-              // onMouseOver={(e) => e.target.style.color = '#007bff'}
-              // onMouseOut={(e) => e.target.style.color = '#333'}
             >
               Home
             </a>
           </li>
           <li style={{ margin: '0 15px' }}>
-          <Link
-              to="/about"
+            <button
+              onClick={() => navigate('/about')}
               style={{
+                background: 'none',
+                border: 'none',
                 color: 'white',
                 textDecoration: 'none',
+                cursor: 'pointer',
                 transition: 'color 0.3s ease',
               }}
             >
               About
-            </Link>
+            </button>
           </li>
           <li style={{ margin: '0 15px' }}>
-            <a
-              href="/services"
+            <button
+              onClick={() => navigate('/services')}
               style={{
+                background: 'none',
+                border: 'none',
                 color: 'white',
                 textDecoration: 'none',
+                cursor: 'pointer',
                 transition: 'color 0.3s ease',
               }}
-              // onMouseOver={(e) => e.target.style.color = '#007bff'}
-              // onMouseOut={(e) => e.target.style.color = '#333'}
             >
               Services
-            </a>
+            </button>
           </li>
           <li style={{ margin: '0 15px' }}>
-            <a
-              href="/contact"
+            <button
+              onClick={() => navigate('/contact')}
               style={{
+                background: 'none',
+                border: 'none',
                 color: 'white',
                 textDecoration: 'none',
+                cursor: 'pointer',
                 transition: 'color 0.3s ease',
               }}
-              // onMouseOver={(e) => e.target.style.color = '#007bff'}
-              // onMouseOut={(e) => e.target.style.color = '#333'}
             >
               Contact
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

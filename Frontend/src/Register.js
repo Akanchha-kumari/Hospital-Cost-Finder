@@ -20,6 +20,7 @@ import {
 import { FaSave, FaTrash, FaEdit } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import ValidationR from './ValidationR';
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(-20px); }

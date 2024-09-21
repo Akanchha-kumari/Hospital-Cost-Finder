@@ -10,13 +10,12 @@ import Contact from './Contact';
 const AllRoutes = () => {
   return (
     <Routes>
-         <Route path="/" element={<Login />} />
-      <Route path="/search" element={<Search />} />
-      <Route path="/register" element={<Register />} />
-      
-        <Route path="/about" component={About} />
-        <Route path="/services" component={Services} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/" element={<Login />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 }
