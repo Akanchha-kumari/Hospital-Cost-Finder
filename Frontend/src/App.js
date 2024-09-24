@@ -11,6 +11,8 @@ const App = () => {
       <Allroutes/>
     </div>
 );
+
+
 }
 
 export default App;

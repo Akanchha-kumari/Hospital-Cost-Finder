@@ -6,6 +6,28 @@ body {
   overflow: auto; 
 }
 
+.navbar ul li a, 
+.navbar ul li button {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  padding: 15px 25px;
+  display: inline-block;
+  border-radius: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in, background-color 0.3s ease-in;
+}
+
+
+.navbar ul li a:hover, 
+.navbar ul li button:hover {
+  color: #66cdaa; 
+  background-color: #003366; 
+}
+
+
 .App {
   text-align: center;
 }
@@ -31,6 +53,7 @@ body {
 .navbar ul li {
   margin: 0 15px;
 }
+
 
 .navbar ul li a {
   text-decoration: none;

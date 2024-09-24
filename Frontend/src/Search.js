@@ -39,67 +39,14 @@ function Search() {
       </div>
 
       {}
-      <nav style={{ backgroundColor: '#004466', padding: '10px', color: '#333', marginBottom: '30px' }}>
-        <ul style={{ listStyleType: 'none', margin: 0, padding: 0, display: 'flex', justifyContent: 'center' }}>
-          <li style={{ margin: '0 15px' }}>
-            <a
-              href="#"
-              style={{
-                color: 'white',
-                textDecoration: 'none',
-                transition: 'color 0.3s ease',
-              }}
-            >
-              Home
-            </a>
-          </li>
-          <li style={{ margin: '0 15px' }}>
-            <button
-              onClick={() => navigate('/about')}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: 'white',
-                textDecoration: 'none',
-                cursor: 'pointer',
-                transition: 'color 0.3s ease',
-              }}
-            >
-              About
-            </button>
-          </li>
-          <li style={{ margin: '0 15px' }}>
-            <button
-              onClick={() => navigate('/services')}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: 'white',
-                textDecoration: 'none',
-                cursor: 'pointer',
-                transition: 'color 0.3s ease',
-              }}
-            >
-              Services
-            </button>
-          </li>
-          <li style={{ margin: '0 15px' }}>
-            <button
-              onClick={() => navigate('/contact')}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: 'white',
-                textDecoration: 'none',
-                cursor: 'pointer',
-                transition: 'color 0.3s ease',
-              }}
-            >
-              Contact
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <nav className="navbar">
+       <ul>
+                <li><a href="#">Home</a></li>
+                <li><button onClick={() => navigate('/about')}>About</button></li>
+                 <li><button onClick={() => navigate('/services')}>Services</button></li>
+                  <li><button onClick={() => navigate('/contact')}>Contact</button></li>
+              </ul>
+          </nav>
 
       {}
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f8f9fa', padding: '40px' }}>
