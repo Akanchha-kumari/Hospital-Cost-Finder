@@ -64,7 +64,7 @@ function Search() {
           </div>
 
           <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', marginBottom: '10px' }}>Enter Location:</label>
+            <label style={{ display: 'block', marginBottom: '10px' }}>Surgeries:</label>
             <input
               type="text"
               value={location}
@@ -73,15 +73,7 @@ function Search() {
             />
           </div>
 
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', marginBottom: '10px' }}>Enter Maximum Cost:</label>
-            <input
-              type="number"
-              value={cost}
-              onChange={(e) => setCost(e.target.value)}
-              style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ced4da' }}
-            />
-          </div>
+         
 
           <button
             onClick={searchHospitals}
