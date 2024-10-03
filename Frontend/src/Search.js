@@ -2,16 +2,12 @@ import './Search.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import About from './About';
-import Services from './Services';
-import Contact from './Contact';
-
 function Search() {
   const [location, setLocation] = useState('');
   const [cost, setCost] = useState('');
   const [disease, setDisease] = useState('');
   const [results, setResults] = useState([]);
-  
+
   const navigate = useNavigate();
 
   const searchHospitals = () => {
@@ -33,22 +29,37 @@ function Search() {
 
   return (
     <div style={{ height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column' }}>
-      {}
-      <div style={{ backgroundColor: '#007bff', padding: '30px', textAlign: 'center', color: 'white' }}>
+      <div style={{ backgroundColor: '#007bff', padding: '30px', textAlign: 'center', color: 'white', position: 'relative' }}>
         <h1 style={{ margin: 0, fontSize: '3rem' }}>Hospital Cost Finder</h1>
+        <button
+          onClick={() => navigate('/hospitalform')}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            right: '30px',
+            transform: 'translateY(-50%)',
+            padding: '10px 20px',
+            backgroundColor: 'green',
+            color: 'white',
+            border: '2px solid #ffffff',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s ease',
+          }}
+        >
+          Hospitals
+        </button>
       </div>
 
-      {}
       <nav className="navbar">
-       <ul>
-                <li><a href="#">Home</a></li>
-                <li><button onClick={() => navigate('/about')}>About</button></li>
-                 <li><button onClick={() => navigate('/services')}>Services</button></li>
-                  <li><button onClick={() => navigate('/contact')}>Contact</button></li>
-              </ul>
-          </nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><button onClick={() => navigate('/about')}>About</button></li>
+          <li><button onClick={() => navigate('/services')}>Services</button></li>
+          <li><button onClick={() => navigate('/contact')}>Contact</button></li>
+        </ul>
+      </nav>
 
-      {}
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f8f9fa', padding: '40px' }}>
         <div style={{ backgroundColor: '#ffffff', padding: '40px', borderRadius: '10px', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', width: '100%', maxWidth: '800px' }}>
           <p style={{ marginBottom: '30px', fontSize: '1.5rem' }}>Find hospitals based on your location, cost preferences, and medical needs.</p>
@@ -73,12 +84,10 @@ function Search() {
             />
           </div>
 
-         
-
           <button
             onClick={searchHospitals}
             style={{
-              backgroundColor: '#28a745', 
+              backgroundColor: '#28a745',
               color: 'white',
               padding: '12px',
               borderRadius: '5px',
@@ -88,8 +97,8 @@ function Search() {
               width: '100%',
               transition: 'background-color 0.3s ease',
             }}
-            onMouseOver={(e) => e.target.style.backgroundColor = '#218838'}
-            onMouseOut={(e) => e.target.style.backgroundColor = '#28a745'}
+            onMouseOver={(e) => (e.target.style.backgroundColor = '#218838')}
+            onMouseOut={(e) => (e.target.style.backgroundColor = '#28a745')}
           >
             Search Hospitals
           </button>

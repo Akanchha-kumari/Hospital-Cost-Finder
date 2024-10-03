@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use(express.json()); 
 app.use('/api/admins', require('./Routes/adminRoutes'));
+app.use('/api/hospitals', require('./Routes/hospitalRoutes'));
 const errorHandler = require('./middleware/errorHandler');
 app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
